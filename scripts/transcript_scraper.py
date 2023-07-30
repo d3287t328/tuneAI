@@ -8,11 +8,7 @@ def get_clean_transcript(video_id):
         print(f"Error: {str(e)}")
         sys.exit(1)
 
-    clean_transcript = ""
-    for line in transcript:
-        clean_transcript += f"{line['text']} "
-
-    return clean_transcript
+    return "".join(f"{line['text']} " for line in transcript)
 
 if __name__ == "__main__":
     video_id = sys.argv[1]
