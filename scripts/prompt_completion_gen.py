@@ -28,8 +28,7 @@ def call_openai_api(chunk):
 
 def split_into_chunks(text, tokens=3000):
     words = text.split()
-    chunks = [' '.join(words[i:i + tokens]) for i in range(0, len(words), tokens)]
-    return chunks
+    return [' '.join(words[i:i + tokens]) for i in range(0, len(words), tokens)]
 
 def process_chunks(input_file, output_file):
     text = load_text(input_file)
